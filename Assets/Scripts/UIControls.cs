@@ -5,31 +5,28 @@ using UnityEngine.UI;
 
 public class UIControls : MonoBehaviour {
 
-	float timer = 4;
-	float cooldown = 4;
+	float timer = 1;
+	float cooldown = 1;
 	bool startTime = false;
 	public Image hook;
 
-	// Use this for initialization
-	void Start () {
 
-	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		//for testing
+		if (Input.GetKeyDown (KeyCode.Space) && startTime == false) {
 			startTime = true;
 			cooldown = 0;
 		}
 		if (startTime) {
-			if (cooldown < 4) {
+			if (cooldown < 1) {
 				cooldown += Time.deltaTime;
 				CoolDown (cooldown);
 			} else {
-				cooldown = 4;
+				cooldown = 1;
 				startTime = false;
 			}
-
 		}
 	}
 
