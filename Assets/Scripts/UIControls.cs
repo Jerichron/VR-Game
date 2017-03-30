@@ -9,6 +9,16 @@ public class UIControls : MonoBehaviour {
 	float cooldown = 1;
 	bool startTime = false;
 	public Image hook;
+	public Image healthBar;
+	public PlayerHealth playerHealth;
+
+	void Start(){
+		GameObject player = GameObject.Find ("Player");
+		PlayerHealth playerHealth = player.GetComponent<PlayerHealth> ();
+
+	}
+
+
 
 
 	
@@ -28,9 +38,21 @@ public class UIControls : MonoBehaviour {
 				startTime = false;
 			}
 		}
+		Health ();
 	}
 
 	void CoolDown(float time){
 		hook.fillAmount = time / timer;
+	
+	}
+
+	void Health()
+	{
+		if(playerHealth.inSight && playerHealth.alive)
+		{
+			playerHealth.cur_health -= Time.deltaTime;
+			healthBar.fillAmount = playerHealth.cur_health / playerHealth.health;
+		}
 	}
 }
+		
