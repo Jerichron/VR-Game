@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour {
 	public float cur_health = 100;
 	public float health = 100;
 	public bool alive = true;
-	private float distance = 100;
+
 
 
 	//public GameObject[] enemy;

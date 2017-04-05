@@ -10,7 +10,7 @@ public class EnemyInSight : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//gets the playerhealth script
-		PlayerHealth playerHealth = player.GetComponent<PlayerHealth> ();
+
 
 	}
 	

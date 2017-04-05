@@ -12,10 +12,14 @@ public class UIControls : MonoBehaviour {
 	public Image healthBar;
 	public PlayerHealth playerHealth;
 
-	void Start(){
-		GameObject player = GameObject.Find ("Player");
-		PlayerHealth playerHealth = player.GetComponent<PlayerHealth> ();
+	public GameManager manager;
+	public Text scoreText;
 
+	void Start(){
+		//GameObject player = GameObject.Find ("Player");
+
+		//display score on start
+		DisplayScore ();
 	}
 
 
@@ -39,6 +43,9 @@ public class UIControls : MonoBehaviour {
 			}
 		}
 		Health ();
+
+		//Updates the score
+		DisplayScore ();
 	}
 
 	void CoolDown(float time){
@@ -53,6 +60,10 @@ public class UIControls : MonoBehaviour {
 			playerHealth.cur_health -= Time.deltaTime;
 			healthBar.fillAmount = playerHealth.cur_health / playerHealth.health;
 		}
+	}
+
+	void DisplayScore(){
+		scoreText.text = ("Score: "+ manager.score);
 	}
 }
 		
