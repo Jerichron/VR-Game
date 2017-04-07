@@ -1,7 +1,11 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{5BB1717E-560A-88F1-440E-20CDD8A61488}") = "VR-Game", "Assembly-CSharp-firstpass.csproj", "{83B2A8E9-71DF-1751-16EC-D8DCE523912C}"
+EndProject
 Project("{5BB1717E-560A-88F1-440E-20CDD8A61488}") = "VR-Game", "Assembly-CSharp.csproj", "{F58A8C27-1E47-D9B7-FB0A-935DFE17A41E}"
+EndProject
+Project("{5BB1717E-560A-88F1-440E-20CDD8A61488}") = "VR-Game", "Assembly-CSharp-Editor.csproj", "{06E59AEB-315D-9556-4715-72543B9D8953}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83B2A8E9-71DF-1751-16EC-D8DCE523912C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83B2A8E9-71DF-1751-16EC-D8DCE523912C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83B2A8E9-71DF-1751-16EC-D8DCE523912C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83B2A8E9-71DF-1751-16EC-D8DCE523912C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F58A8C27-1E47-D9B7-FB0A-935DFE17A41E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F58A8C27-1E47-D9B7-FB0A-935DFE17A41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F58A8C27-1E47-D9B7-FB0A-935DFE17A41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F58A8C27-1E47-D9B7-FB0A-935DFE17A41E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06E59AEB-315D-9556-4715-72543B9D8953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06E59AEB-315D-9556-4715-72543B9D8953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06E59AEB-315D-9556-4715-72543B9D8953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06E59AEB-315D-9556-4715-72543B9D8953}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,8 +19,9 @@ public class Hookshot : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire3"))
 		{
 			HookChild = null;
-			if (Physics.Raycast(HookRay, out HookHit))
+			if (Physics.Raycast(HookRay, out HookHit, Mathf.Infinity, LayerMask.NameToLayer("UI")))
 			{
+				
 				Debug.DrawRay (HookRay.origin, HookRay.direction, Color.red);
 				HookChild = Instantiate(Hook, HookHit.point, Quaternion.identity) as GameObject;
 					Player.localPosition = HookHit.point;
