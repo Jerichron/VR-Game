@@ -29,7 +29,7 @@ public class UIControls : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//for testing
-		if (Input.GetKeyDown (KeyCode.Space) && startTime == false) {
+		if (Input.GetMouseButtonDown(0) && startTime == false) {
 			startTime = true;
 			cooldown = 0;
 		}
