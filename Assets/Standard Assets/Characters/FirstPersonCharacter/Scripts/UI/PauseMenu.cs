@@ -10,10 +10,25 @@ public class PauseMenu : MonoBehaviour {
 	public Canvas pauseUI;
 	public GameObject crossfire;
 	public EventSystem check;
+	private GameObject stored;
 
-
+	void Start(){
+		stored = check.firstSelectedGameObject;
+	}
+		
 
 	void Update(){
+
+		if(check.currentSelectedGameObject!=stored){
+			if(check.currentSelectedGameObject == null){
+
+			check.SetSelectedGameObject (stored);
+			} else {
+			stored = check.currentSelectedGameObject;
+			}
+		}
+
+
 
 		if (Input.GetKeyDown (KeyCode.Joystick1Button7) || Input.GetKeyDown (KeyCode.Escape)) {
 			if (!pauseGame) {

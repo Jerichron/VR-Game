@@ -7,7 +7,13 @@ public class Hookshot : MonoBehaviour {
 	public Transform Player;
 	public GameObject Hook;
 	public GameObject HookChild;
+	private PauseMenu freeze;
+	private UIControls activeHook;
 
+	void Start(){
+		freeze = FindObjectOfType<PauseMenu> ();
+		activeHook = FindObjectOfType<UIControls> ();
+	}
 
 
 	// Update is called once per frame
@@ -16,7 +22,7 @@ public class Hookshot : MonoBehaviour {
 		Debug.DrawRay (HookRay.origin, HookRay.direction, Color.green);
 		RaycastHit HookHit;
 
-		if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire3"))
+		if (Input.GetMouseButtonDown(0)  && freeze.pauseGame == false  && activeHook.canFire == true|| Input.GetButtonDown("Fire3") && freeze.pauseGame == false && activeHook.canFire == true)
 		{
 			HookChild = null;
 			if (Physics.Raycast(HookRay, out HookHit, Mathf.Infinity, LayerMask.NameToLayer("UI")))
@@ -32,4 +38,6 @@ public class Hookshot : MonoBehaviour {
 					{
 						if (HookChild != null)
 							Destroy(HookChild);
-					}}}
+					}
+	}
+}

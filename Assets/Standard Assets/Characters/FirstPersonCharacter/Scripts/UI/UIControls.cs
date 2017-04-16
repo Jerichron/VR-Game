@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class UIControls : MonoBehaviour {
 
-	float timer = 1;
-	float cooldown = 1;
+	public bool canFire = true;
+	public float cooldown = 1;
+	public float setCoolown;
 	bool startTime = false;
 	public Image hook;
 	public Image healthBar;
@@ -34,12 +35,14 @@ public class UIControls : MonoBehaviour {
 			cooldown = 0;
 		}
 		if (startTime) {
-			if (cooldown < 1) {
+			if (cooldown < setCoolown) {
 				cooldown += Time.deltaTime;
 				CoolDown (cooldown);
+				canFire = false;
 			} else {
-				cooldown = 1;
+				cooldown = setCoolown;
 				startTime = false;
+				canFire = true;
 			}
 		}
 		Health ();
@@ -49,7 +52,7 @@ public class UIControls : MonoBehaviour {
 	}
 
 	void CoolDown(float time){
-		hook.fillAmount = time / timer;
+		hook.fillAmount = time / setCoolown;
 	
 	}
 
